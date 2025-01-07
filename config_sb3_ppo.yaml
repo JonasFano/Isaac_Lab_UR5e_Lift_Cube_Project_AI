@@ -1,0 +1,69 @@
+program: train_sb3_wandb_ppo.py
+method: grid
+name: rel_ik_sb3_ppo_ur5e_lift_cube
+metric:
+  goal: maximize
+  name: rollout/ep_rew_mean
+
+parameters:
+  seed:
+    value: 42
+
+  n_timesteps: # iteration * n_steps * nenvs: 1000 * 64 * 4096 = 262144000 # 52428800 # 78643200
+    value: 262144000
+
+  policy:
+    value: 'MlpPolicy'
+
+  n_steps:
+    value: 64
+
+  batch_size:
+    values: [8192, 16384, 32768]
+
+  gae_lambda:
+    value: 0.95
+
+  gamma:
+    value: 0.95
+
+  n_epochs:
+    value: 8
+
+  ent_coef: # Possibly change this to encourange more exploration
+    values: [0.01, 0.001]
+
+  vf_coef:
+    value: 0.1
+
+  learning_rate:
+    values: [1e-4, 3e-4]
+
+  clip_range:
+    value: 0.2
+
+  policy_kwargs:
+    parameters:
+      activation_fn: 
+        values: [nn.ELU, nn.Tanh, nn.ReLU]
+      net_arch:
+        parameters:
+          pi:
+            value: [256, 128, 64]
+          vf:
+            value: [256, 128, 64]
+
+  target_kl:
+    value: 0.02
+
+  max_grad_norm:
+    value: 1.0
+
+  normalize_input:
+    value: False
+
+  normalize_value:
+    value: False
+
+  clip_obs:
+    value: 50.0

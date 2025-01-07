@@ -1,0 +1,69 @@
+# Reference: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ddpg.yml
+program: train_sb3_wandb_ddpg.py
+method: grid
+name: rel_ik_sb3_ddpg_ur5e_lift_cube_0_05
+metric:
+  goal: maximize
+  name: rollout/ep_rew_mean
+
+parameters:
+  seed:
+    value: 42
+
+  device:
+    value: "cuda:0"
+
+  n_timesteps: # iteration * n_steps * nenvs: 800 * 64 * 4096 = 209715200
+    value: 209715200
+
+  policy:
+    value: 'MlpPolicy'
+
+  batch_size:
+    values: [512, 1024] 
+
+  gamma:
+    value: 0.95
+
+  learning_rate:
+    values: [1e-4, 3e-4]
+
+  train_freq:
+    value: 4
+
+  gradient_steps:
+    value: 4
+
+  buffer_size: 
+    value: 1000000
+
+  learning_starts: 
+    value: 1000
+
+  tau: 
+    value: 0.02
+
+  action_noise:
+    value: NormalActionNoise
+
+  # replay_buffer_class: 
+  #   value: "HerReplayBuffer"
+
+  # replay_buffer_kwargs: 
+  #   value: "dict(goal_selection_strategy='future', n_sampled_goal=4)"
+
+  policy_kwargs:
+    parameters:
+      activation_fn: 
+        values: ['nn.ELU', 'nn.ReLU', 'nn.Tanh']
+      net_arch:
+        value: [256, 256]
+
+  normalize_input:
+    value: False
+
+  normalize_value:
+    value: False
+
+  clip_obs:
+    value: 50.0

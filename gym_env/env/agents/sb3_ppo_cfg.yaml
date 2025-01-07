@@ -1,0 +1,25 @@
+# Reference: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ppo.yml#L32
+seed: 42
+n_timesteps: 209715200 
+policy: 'MlpPolicy'
+n_steps: 64
+batch_size: 16384
+gae_lambda: 0.95
+gamma: 0.95
+n_epochs: 8
+ent_coef: 0.01
+vf_coef: 0.1
+learning_rate: !!float 3e-4
+clip_range: 0.2
+policy_kwargs: "dict(
+                  activation_fn=nn.Tanh,
+                  net_arch=dict(pi=[256, 128, 64], vf=[256, 128, 64])
+                )"
+target_kl: 0.02
+max_grad_norm: 1.0
+
+# Uses VecNormalize class to normalize obs
+normalize_input: False
+# Uses VecNormalize class to normalize rew
+normalize_value: False
+clip_obs: 50.0

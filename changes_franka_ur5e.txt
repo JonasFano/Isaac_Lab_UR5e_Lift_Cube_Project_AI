@@ -1,0 +1,14 @@
+1. gym_env/env/mdp/observations.py
+- Change the offset of the gripper to get the correct wrist state
+
+2. config_sb3_.yaml
+- Change name to ur5e or franka
+
+
+If using wandb
+3. train_sb3_wandb.py 
+- Change wandb project name according to the robot used
+- Change selected task to either UR5e-... or Franka-...
+
+If not using wandb
+3. Select correct task in run train_sb3_ppo.py command
