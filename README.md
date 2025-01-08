@@ -83,6 +83,8 @@ Note: For this option, the hyperparameters are defined in /gym_env/env/agents/
     python3 play_sb3_td3.py --num_envs 4 --task UR5e-Lift-Cube-IK --checkpoint /path/to/trained/model
 
 
+Note: This repository includes two pre-trained models in /models/. These models were used to record the result videos linked above.
+
 
 ## Task options (defined in /gym_env/env/__init__.py)
 UR5e and Relative Differential Inverse Kinematics Action Space
