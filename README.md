@@ -3,7 +3,18 @@ This project was done in the Project in Artificial Intelligence course of the Ma
 
 This Repository includes the implementation to train PPO, DDPG or TD3 agents (from Stable-Baselines3) in Isaac Lab. The considered task includes a UR5e or Franka robot and requires it to lift a cube to a desired pose with differential inverse kinematics (IK) control or joint position control.
 The focus of the study was on the UR5e robot controlled with a differential IK controller working with position and orientation displacements relative to the current TCP pose (= relative differential IK control). 
-The Weights&Biases tool was utilized to automate the hyperparameter search since it allows to extensively visualize the episode reward mean of a range of training runs each with different hyperparameter configurations. 
+The Weights&Biases tool was utilized to automate the hyperparameter search since it allows to extensively visualize the episode reward mean of a range of training runs each with different hyperparameter configurations.
+
+# Result videos
+Result videos are available on YouTube. 
+
+PPO trained agent
+
+    https://www.youtube.com/watch?v=B-MV_-f1X2k
+
+TD3 trained agent
+
+    https://www.youtube.com/watch?v=d3khxJKGzeE
 
 
 # Steps to execute the code
