@@ -8,19 +8,15 @@ The Weights&Biases tool was utilized to automate the hyperparameter search since
 # Result videos
 Result videos are available on YouTube. 
 
-PPO trained agent
+PPO trained agent: https://youtu.be/B-MV_-f1X2k
 
-    https://www.youtube.com/watch?v=B-MV_-f1X2k
-
-TD3 trained agent
-
-    https://www.youtube.com/watch?v=d3khxJKGzeE
+TD3 trained agent: https://youtu.be/d3khxJKGzeE
 
 
 # Steps to execute the code
 Follow these steps to create a virtual python environment and to install Isaac Sim and Isaac Lab:
 
-    https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html
+https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html
 
 Install requirements:
     
